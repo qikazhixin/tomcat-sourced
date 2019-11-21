@@ -55,8 +55,9 @@ public class Response implements ServletResponse {
             output.write(errorMessage.getBytes());
         }
         finally {
-            if (fis!=null)
+            if (fis!=null) {
                 fis.close();
+            }
         }
     }
 
@@ -73,7 +74,8 @@ public class Response implements ServletResponse {
     }
 
     public PrintWriter getWriter() throws IOException {
-        return null;
+        PrintWriter printWriter = new PrintWriter(output, true);
+        return printWriter;
     }
 
     public void setCharacterEncoding(String charset) {
