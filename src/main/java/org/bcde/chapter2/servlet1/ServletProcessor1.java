@@ -6,6 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLStreamHandler;
@@ -30,7 +31,7 @@ public class ServletProcessor1 {
         }
         Class myclass = null;
         try {
-            loader.loadClass(servletName);
+            myclass = loader.loadClass(servletName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -38,6 +39,7 @@ public class ServletProcessor1 {
         try {
             servlet = (Servlet) myclass.newInstance();
             servlet.service((ServletRequest) request, (ServletResponse) response);
+
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

@@ -15,6 +15,7 @@ public class HttpServlet1 {
 
     public static void main(String[] args) {
         HttpServlet1 servlet1 = new HttpServlet1();
+        servlet1.await();
     }
 
     public void await() {
@@ -41,7 +42,7 @@ public class HttpServlet1 {
 
                 Response response = new Response(output);
                 response.setRequest(request);
-                response.sendStaticResource();
+//                response.sendStaticResource();
 
                 if (request.getUri().startsWith("/servlet/")) {
                     ServletProcessor1 processor1 = new ServletProcessor1();

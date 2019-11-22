@@ -1,5 +1,3 @@
-package org.bcde.chapter2;
-
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
