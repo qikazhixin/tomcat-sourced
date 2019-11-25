@@ -2,10 +2,14 @@ package org.bcde.chapter3.connector.http;
 
 import java.net.Socket;
 
+/**
+ *
+    processor
+ */
 public class HttpProcessor {
 
     private HttpConnector connector;
-    private HttpRequest request;
+
     private HttpRequestLine requestLine = new HttpRequestLine();
     private HttpResponse response;
 
